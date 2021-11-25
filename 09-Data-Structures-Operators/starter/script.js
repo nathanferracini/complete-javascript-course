@@ -129,3 +129,8 @@ const rest2 = {
 
 rest2.numGuest = rest2.numGuest || 10;
 console.log(rest2);
+
+const myMap = new Map();
+myMap.set(true, 'Nathan');
+myMap.set(true, 'Nathan2');
+console.log(myMap);
