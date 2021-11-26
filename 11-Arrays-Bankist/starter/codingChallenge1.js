@@ -61,6 +61,18 @@ console.log(adults.reduce((previous, age) => previous + age) / adults.length);
 console.log(
   adults.reduce((previous, age, _, arr) => previous + age / arr.length, 0)
 );
+
+// Coding Challenge #3
+// Rewrite the 'calcAverageHumanAge' function from Challenge #2, but this time
+// as an arrow function, and using chaining!
+
+const doEverythingInOneShot = function (dogsAges) {
+  dogsAges
+    .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4))
+    .filter(age => age >= 18)
+    .reduce((previous, age, _, arr) => previous + age / arr.length, 0);
+};
+console.log(doEverythingInOneShot([5, 2, 4, 1, 15, 8, 3]));
 // 4. Run the function for both test datasets
 // Test data:
 // § Data 1: [5, 2, 4, 1, 15, 8, 3]
