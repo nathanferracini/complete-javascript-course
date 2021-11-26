@@ -82,3 +82,24 @@ console.log(arrAddTax(0.1)(100));
 
 const arrAddTaxBR = arrAddTax(0.5);
 console.log(arrAddTaxBR(100));
+
+(function () {
+  console.log('execute me only once');
+})();
+
+const highLevelFunction = function () {
+  let inc = 0;
+  return function () {
+    inc++;
+    console.log(`It is me ${inc}`);
+  };
+};
+
+const sample1 = highLevelFunction();
+const sample2 = highLevelFunction();
+sample1();
+sample1();
+sample1();
+sample2();
+
+console.dir(sample1);
