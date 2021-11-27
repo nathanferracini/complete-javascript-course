@@ -57,3 +57,11 @@ console.log(
   movements.some(mov => mov >= 1500)
 );
 console.log('includes', movements.includes(1500));
+
+const arrM = [1, 2, 3, 4, 5, 6];
+console.log(arrM.fill(90, 15, 12));
+
+console.log(
+  'from',
+  Array.from({ length: 7 }, (_, i) => i + 1)
+);

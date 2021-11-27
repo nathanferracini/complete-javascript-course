@@ -191,6 +191,14 @@ btnSort.addEventListener('click', function (e) {
   displayMovements(currentAcc.movements.sort((movA, movB) => movA - movB));
 });
 
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    movEl => Number(movEl.textContent.replace('€', ''))
+  );
+  console.log(movementsUI);
+});
+
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
