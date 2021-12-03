@@ -78,9 +78,29 @@ const getCountryData = function (lat, lng) {
 
 // whereAmI(52.508, 13.381);
 btn.addEventListener('click', function () {
-  // whereAmI(19.037, 72.873);
-  getCountryData(-33.933, 18.474);
+  getCurrentPosition().then(
+    position =>
+      getCountryData(position.coords.latitude, position.coords.longitude),
+    err => console.log(err)
+  );
+  // getCountryData(-33.933, 18.474);
   // getCountryData(52.508, 13.381);
   // currentCountry = 'portugal';
   //   getCountryData('qdwedqew');
 });
+
+// navigator.geolocation.getCurrentPosition(
+//   position => console.log(position),
+//   err => console.log(err)
+// );
+
+const getCurrentPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+getCurrentPosition().then(
+  position => console.log(position),
+  err => console.log(err)
+);
