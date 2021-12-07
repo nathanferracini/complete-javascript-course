@@ -1,6 +1,8 @@
 import * as cm from './commons.js';
 // import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
 import cloneDeep from 'lodash';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 console.log(cm.fileName);
 console.log(cm.nextNumber());
@@ -21,3 +23,7 @@ const stateDeepClone = cloneDeep(state);
 
 state.user.loggedIn = false;
 console.log(stateClone, stateDeepClone);
+Promise.resolve('TEST').then(x => console.log(x));
+
+// import 'core-js/stable/array/find';
+// import 'core-js/stable/promise';
