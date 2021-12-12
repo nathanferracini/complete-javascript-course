@@ -43,7 +43,7 @@ const controlPagination = function (increment) {
 const controlServings = function (newServings) {
   if (newServings === 0) return;
   model.updateServings(newServings);
-  recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
 };
 
 const init = function () {
