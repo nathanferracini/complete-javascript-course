@@ -65,5 +65,7 @@ const init = function () {
   recipeView.addHandlerBookmark(controlAddBookmark);
   searchView.addHandlerRender(controlSearchResults);
   paginationView.addHandlerRender(controlPagination);
+  model.restoreBookmarks();
+  bookmarksView.render(model.state.bookmarks);
 };
 init();
